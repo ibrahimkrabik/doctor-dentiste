@@ -1,0 +1,321 @@
+* {
+       box-sizing: border-box;
+       margin: 0;
+       padding: 0;
+}
+ul {
+       list-style: none;
+}
+body {
+       position: relative;
+}
+svg {
+       color: #fff;
+       font-size: 40px;
+       margin-left: 50px;
+}
+
+/*colors*/
+:root {
+       --first-color: #77dd66;
+       --second-color: #8fe381;
+       --third-color: #a7e99c;
+       --forty-color: #5d8700;
+}
+
+/* style alert */
+.alert {
+       position: absolute;
+       top: 100px;
+       left: 50%;
+       transform: translateX(-50%);
+       z-index: 9999999999999;
+       display: none;
+}
+.alert.open {
+       display: block;
+}
+
+/* start navv */
+.navv {
+       display: flex;
+       justify-content: space-between;
+       background: linear-gradient(var(--first-color), var(--third-color));
+       padding: 0.5rem;
+}
+@media (max-width: 767px) {
+       .navv {
+              padding: 1.5rem;
+       }
+}
+.navv .new h5{
+       color: var(--forty-color);
+       font-weight: bold;
+}
+
+
+.fa-user-doctor {
+       font-size: 70px;
+}
+#add {
+       cursor: pointer;
+}
+/* end navv */
+
+/* start tabs */
+.nav-tabs {
+       border-bottom: 1px solid var(--first-color);
+       margin: 3rem 0rem;
+}
+
+.tabs ul li {
+       padding-left: 6rem;
+}
+@media (max-width: 767px) {
+       .tabs ul li {
+              padding-left: 1rem;
+       }
+       .nav-tabs {
+              margin: 3rem 3rem;
+       }
+}
+.nav-tabs .nav-link {
+       color: var(--first-color);
+}
+.nav-tabs .nav-link.active {
+       background-color: var(--second-color);
+       color: #fff;
+}
+/* end tabs */
+
+/* start patient */
+.patient ul {
+       display: flex;
+       justify-content: space-around;
+       flex-wrap: wrap;
+       align-items: center;
+       box-shadow: 0 2px 15px rgba(0 0 0/10%);
+       padding-top: 10px;
+       transition: 0.3s;
+}
+.patient ul:hover {
+       box-shadow: 0 2px 15px rgba(0 0 0/20%);
+}
+.patient .thead li {
+       font-size: 20px;
+       font-weight: bold;
+       color: var(--forty-color);
+       flex-basis: 10%;
+}
+.patient li {
+       font-size: 20px;
+       flex-basis: 10%;
+}
+@media (max-width: 767px) {
+       .patient li {
+              font-size: 16px;
+              flex-basis: 15%;
+       }
+       .patient .thead li {
+              font-size: 16px;
+              flex-basis: 15%;
+       }
+}
+.patient li.delete {
+       color: var(--second-color);
+       cursor: pointer;
+       font-size: 25px;
+       font-weight: bold;
+}
+.patient li.show,
+.patient li.now {
+       background-color: var(--second-color);
+       color: #fff;
+       text-align: center;
+       font-weight: bold;
+       cursor: pointer;
+       user-select: none;
+       margin-bottom: 10px;
+}
+.patient li.now {
+       background-color: red;
+}
+.patient li.hide {
+       display: none;
+}
+/* end patient */
+
+/* start main-detail */
+.booking,
+.main-detail {
+       width: 100%;
+       height: 100%;
+       position: fixed;
+       background-color: rgba(0, 0, 0, 0.6);
+       z-index: 9999999;
+       top: -100%;
+       left: 0;
+       transition: 0.5s;
+       display: flex;
+       justify-content: center;
+       align-items: center;
+       padding: 10px;
+}
+.main-detail {
+       top: 0;
+       transform: scale(0);
+}
+.main-detail.open {
+       transform: scale(1);
+}
+
+.main-detail span {
+       background-color: #fff;
+       width: 40px;
+       height: 40px;
+       display: flex;
+       justify-content: center;
+       align-items: center;
+       border-radius: 50%;
+       position: absolute;
+       top: 20px;
+       right: 20px;
+       z-index: 9999999;
+       font-size: 30px;
+       color: #000;
+       cursor: pointer;
+}
+/* end main-detail */
+
+/* start details */
+.details {
+       transform: scale(0);
+       width: 400px;
+       height: 400px;
+       max-width: 100%;
+       position: absolute;
+       display: flex;
+       top: 50%;
+       left: 50%;
+       transform: translate(-50%, -50%);
+       background-color: var(--second-color);
+       text-align: center;
+       padding: 60px;
+}
+.details ul:first-child {
+       color: #fff;
+}
+.details ul li {
+       margin-bottom: 20px;
+}
+.details .form-select {
+       display: none;
+}
+.details .show,
+.details .delete {
+       display: none;
+}
+/* end details */
+
+/* start booking */
+.booking.open {
+       top: 0;
+}
+.booking .main {
+       background-color: var(--third-color);
+       border-radius: 5px;
+       position: relative;
+       display: flex;
+       justify-content: space-between;
+       flex-wrap: wrap;
+       width: 800px;
+       max-width: 100%;
+       padding: 40px 20px;
+}
+
+.booking .main div {
+       width: 50%;
+}
+@media (max-width: 767px) {
+       .booking .main {
+              background-color: var(--third-color);
+              border-radius: 5px;
+              position: relative;
+              display: block;
+              justify-content: space-between;
+              flex-wrap: wrap;
+              width: 800px;
+              max-width: 100%;
+              padding: 40px 20px;
+       }
+       .booking .main div {
+              width: 100%;
+       }
+       
+}
+.booking .main label {
+       color: var(--forty-color);
+       font-weight: bold;
+       font-size: 20px;
+       display: block;
+}
+.booking .main input {
+       border: none;
+       outline: none;
+       border-bottom: 2px solid var(--forty-color);
+       background-color: transparent;
+       color: #000;
+       font-weight: 700;
+       display: block;
+       margin-bottom: 25px;
+       width: 90%;
+}
+.booking .main #blood {
+       width: 90%;
+       margin-bottom: 25px;
+}
+.booking .main button {
+       border: none;
+       outline: none;
+       display: flex;
+       width: fit-content;
+       margin-left: auto;
+       margin-top: 20px;
+       padding: 8px 16px;
+       border-radius: 4px;
+       font-size: 20px;
+       font-weight: bold;
+       color: var(--forty-color);
+       cursor: pointer;
+}
+.booking .main span {
+       position: absolute;
+       top: -16px;
+       right: -11px;
+       width: 40px;
+       height: 40px;
+       background-color: #fff;
+       border-radius: 50%;
+       display: flex;
+       justify-content: center;
+       align-items: center;
+       cursor: pointer;
+       font-weight: bold;
+       font-size: 20px;
+}
+/* end booking */
+
+.form-select::selection {
+       background-color: var(--third-color);
+}
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+       -webkit-appearance: none;
+       margin: 0;
+}
+
+/* Firefox */
+input[type='number'] {
+       -moz-appearance: textfield;
+}

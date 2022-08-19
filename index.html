@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Doctor</title>
+    <link rel="stylesheet" href="all.min.css">
+    <link rel="stylesheet" href="bootstrap.min.css">
+    <link rel="stylesheet" href="doctor.css">
+</head>
+<body>
+  <!-- aliert -->
+    <div class="alert alert-primary" role="alert">
+       Check a Correct blood type
+      </div>
+
+      <!-- navv -->
+    <div class="navv">
+        <div class="logo">
+            <i class="fa fa-user-doctor"></i>
+            
+        </div>
+
+        <div class="new" id="add">
+            <i class="fa fa-plus"></i>
+            <h5>New Booking</h5>
+        </div>
+    </div>
+<!-- tabs -->
+    <header>
+        <div class="tabs">
+            <ul class="nav nav-tabs">
+                <li class="nav-item">
+                    <a class="nav-link active" href="#" data-name=".All">All</a>
+                  </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#" data-name=".Coming">Upcoming</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#" data-name=".Waiting">Waiting</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#" data-name=".Now">Now</a>
+                </li>
+              </ul>
+        </div>
+    </header>
+    <!-- patient -->
+    <div class="patient">
+        <ul class="thead">
+            <li></li>
+            <li>Name</li>
+            <li class="hide">Phone</li>
+            <li class="hide">Blood Type</li>
+            <li class="hide">Kind</li>
+            <li>Date Barking</li>
+            <li></li>
+            <li></li>
+        </ul>
+    </div>
+
+    <!-- booking -->
+
+    <div class="booking">
+        <div class="main">
+         <div>
+                <label>Patient Name</label>
+                <input type="text" id="name" required>
+                <label>Phone Number</label>
+                <input type="number" id="number" required>
+            </div>
+           <div>
+                <label>blood type</label>
+                <select id="blood">
+                    <option selected disabled value="0">Please Select OPtion</option>
+                    <option value="O+">O+</option>
+                    <option value="O-">O-</option>
+                    <option value="A+">A+</option>
+                    <option value="A-">A-</option>
+                    <option value="A-">B-</option>
+                    <option value="B+">B+</option>
+                    <option value="AB+">AB+</option>
+                    <option value="AB-">AB-</option>
+                  </select>
+        
+                <label>Booking Date</label>
+                <input type="date" id="date" required>
+            </div> 
+        
+   
+        <select class="form-select">
+            <option selected disabled value="0">Please Select Kind Of Barking</option>
+            <option value="Coming">Pre-Book</option>
+            <option value="Waiting">Direct</option>
+            <option value="Now">Ambulance</option>
+          </select>
+
+        <button id="save">Save</button>
+        <span>X</span>
+        </div>
+        </div>
+    </div>
+        <!-- main details -->
+    <div class="main-detail">
+        <span id="close">X</span>
+
+        <!-- details -->
+        <div class="details">
+            
+        </div>
+    </div>
+    
+   
+   
+
+    <script src="all.min.js"></script>
+    <script src="bootstrap.min.js"></script>
+    <script src="doctor.js"></script>
+</body>
+</html>
